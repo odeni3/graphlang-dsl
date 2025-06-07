@@ -1,0 +1,30 @@
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Arquivos gerados pelo programa
+generated_graph.py
+
+# Ambientes virtuais
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log 
