@@ -37,14 +37,38 @@ class Graph:
     def draw_graph(self):
         G = nx.DiGraph()
         G.add_nodes_from(self.nodes)
+        
+        # Dicionário para armazenar labels customizados para arestas bidirecionais
+        custom_edge_labels = {{}}
+        
         for u in self.adj:
             for v, w in self.adj[u]:
                 G.add_edge(u, v, weight=w)
+                
+                # Verifica se há aresta reversa para criar label bidirecional
+                reverse_weight = None
+                for dest, peso in self.adj.get(v, []):
+                    if dest == u:
+                        reverse_weight = peso
+                        break
+                
+                # Cria label apropriado
+                if reverse_weight is not None and (v, u) not in custom_edge_labels:
+                    # Aresta bidirecional - mostra ambos os pesos
+                    custom_edge_labels[(u, v)] = f"{{w}}/{{reverse_weight}}"
+                elif (v, u) not in custom_edge_labels:
+                    # Aresta unidirecional
+                    custom_edge_labels[(u, v)] = str(w)
 
-        pos = nx.spring_layout(G)
-        edge_labels = nx.get_edge_attributes(G, 'weight')
-        nx.draw(G, pos, with_labels=True, node_color='lightgreen', node_size=700, arrowsize=20)
-        nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+        pos = nx.spring_layout(G, seed=42)  # seed para layout consistente
+        
+        # Desenha o grafo
+        nx.draw(G, pos, with_labels=True, node_color='lightgreen', 
+                node_size=700, arrowsize=20, font_size=16, font_weight='bold')
+        
+        # Adiciona labels das arestas
+        nx.draw_networkx_edge_labels(G, pos, edge_labels=custom_edge_labels, font_size=12)
+        
         plt.title("Visualização do Grafo Direcionado com Pesos")
         plt.show()
 
