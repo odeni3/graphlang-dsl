@@ -1,5 +1,15 @@
 # GraphLang - DSL para Definição de Grafos
 
+## 👥 Equipe
+- Bruno César
+- Daniel Guilherme
+- Marcus Vinícius
+- Paulo Carvalho
+
+Disciplina de Compiladores  
+Professor: Luis Menezes  
+Universidade de Pernambuco
+
 ## 📋 Descrição
 
 GraphLang é uma **Domain-Specific Language (DSL)** criada para definir grafos direcionados com pesos de forma simples e intuitiva. O projeto utiliza **ANTLR4** para parsing e **Python** para geração de código, permitindo converter definições textuais de grafos em código Python executável com visualização automática.
@@ -223,7 +233,7 @@ Matriz de adjacência (0 significa sem ligação):
 O programa gera automaticamente uma visualização gráfica do grafo usando NetworkX e Matplotlib:
 
 <!-- Insira aqui a imagem do grafo gerado -->
-*[Imagem do grafo será inserida aqui]*
+![Exemplo de grafo gerado](image.png)
 
 ## 🔧 Código Gerado
 
