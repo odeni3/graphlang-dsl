@@ -55,6 +55,8 @@ O Codespace inclui:
 - Todas as dependências do requirements.txt
 - Extensões VS Code necessárias
 
+**Nota sobre Visualização**: No Codespaces, como não há interface gráfica, o grafo será automaticamente salvo em um arquivo `graph_visualization.png` que você pode visualizar diretamente no VS Code ou fazer download.
+
 ### Pré-requisitos (Para Execução Local)
 
 1. **Python 3.7+**
