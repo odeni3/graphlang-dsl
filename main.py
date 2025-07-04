@@ -7,6 +7,7 @@ from GraphLangParser import GraphLangParser
 GRAPH_TEMPLATE = '''\
 import networkx as nx
 import matplotlib.pyplot as plt
+import os
 
 class Graph:
     def __init__(self, nodes):
@@ -63,6 +64,7 @@ class Graph:
         pos = nx.spring_layout(G, seed=42)  # seed para layout consistente
         
         # Desenha o grafo
+        plt.figure(figsize=(10, 8))
         nx.draw(G, pos, with_labels=True, node_color='lightgreen', 
                 node_size=700, arrowsize=20, font_size=16, font_weight='bold')
         
@@ -70,7 +72,13 @@ class Graph:
         nx.draw_networkx_edge_labels(G, pos, edge_labels=custom_edge_labels, font_size=12)
         
         plt.title("Visualização do Grafo Direcionado com Pesos")
-        plt.show()
+        
+        # Verifica se está em ambiente sem display (como Codespaces)
+        if 'CODESPACES' in os.environ or 'GITHUB_CODESPACE_TOKEN' in os.environ:
+            plt.savefig('graph_visualization.png')
+            print("\\nGrafo salvo em 'graph_visualization.png'")
+        else:
+            plt.show()
 
 if __name__ == "__main__":
     nodes = {nodes}
