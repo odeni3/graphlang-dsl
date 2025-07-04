@@ -8,7 +8,7 @@
 
 Disciplina de Compiladores  
 Professor: Luis Menezes  
-Universidade de Pernambuco
+Universidade de Pernambuco (UPE)
 
 ## 📋 Descrição
 
@@ -41,7 +41,21 @@ binarytree-dsl/
 
 ## 🚀 Como Usar
 
-### Pré-requisitos
+### 💻 Executando no GitHub Codespaces
+
+1. Clique no botão verde "Code" no repositório
+2. Selecione a aba "Codespaces"
+3. Clique em "Create codespace on main"
+4. Aguarde o ambiente ser configurado (pode levar alguns minutos)
+5. Pronto! O ambiente já estará configurado com todas as dependências
+
+O Codespace inclui:
+- Python 3.9
+- ANTLR4 Runtime
+- Todas as dependências do requirements.txt
+- Extensões VS Code necessárias
+
+### Pré-requisitos (Para Execução Local)
 
 1. **Python 3.7+**
 2. **ANTLR4** instalado no sistema
